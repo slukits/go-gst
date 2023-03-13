@@ -45,9 +45,6 @@ func NewPipeline(name string) (*Pipeline, error) {
 
 // NewPipelineFromString creates a new gstreamer pipeline from the given launch string.
 func NewPipelineFromString(launchv string) (*Pipeline, error) {
-	if len(strings.Split(launchv, "!")) < 2 {
-		return nil, fmt.Errorf("Given string is too short for a pipeline: %s", launchv)
-	}
 	cLaunchv := C.CString(launchv)
 	defer C.free(unsafe.Pointer(cLaunchv))
 	var gerr *C.GError
