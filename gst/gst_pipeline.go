@@ -5,8 +5,6 @@ import "C"
 
 import (
 	"errors"
-	"fmt"
-	"strings"
 	"unsafe"
 
 	"github.com/tinyzimmer/go-glib/glib"
